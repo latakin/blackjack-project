@@ -1,3 +1,4 @@
+
 class Card:
 
     def __init__(self,suit,rank):
@@ -7,3 +8,6 @@ class Card:
 
     def __str__(self):
         return self.rank  + ' of ' +  self.suit    
+    
+    def __repr__(self):
+        return self.__str__()
