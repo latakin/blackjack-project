@@ -1,13 +1,22 @@
-import random
-from blackjack.card import Card
+
 from blackjack.deck import Deck,ranks,suits
-
-values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8, 'Nine':9, 'Ten':10, 'Jack':10,'Queen':10, 'King':10, 'Ace':11} 
-
-
+from blackjack.chips import Chips
+from blackjack.hand import Hand, values
 
 
-new_deck = Deck()
-new_deck.shuffle_deck()
-print(new_deck.deal_one())
+test_deck = Deck()
+test_deck.shuffle()
+test_player = Hand()
+test_player.add_card(test_deck.deal())
+test_player.add_card(test_deck.deal())
+print(test_player.value)
+
+
+
+
+
+
+
+
+
 

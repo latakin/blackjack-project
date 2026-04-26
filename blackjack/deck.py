@@ -6,19 +6,22 @@ ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten',
 
 
 class Deck:
-
+    
     def __init__(self):
-        self.deck = []
+        self.deck = []  # start with an empty list
         for suit in suits:
             for rank in ranks:
-                self.deck.append(Card(suit,rank))
-
-
-    def shuffle_deck(self):
-         random.shuffle(self.deck)
+                self.deck.append(Card(suit,rank))  # build Card objects and add them to the list
     
-    def deal_one(self):
-        return self.deck.pop(-1)
-
     def __str__(self):
-        return self.deck
+        deck_comp = ''  # start with an empty string
+        for card in self.deck:
+            deck_comp += '\n '+card.__str__() # add each Card object's print string
+        return 'The deck has:' + deck_comp
+
+    def shuffle(self):
+        random.shuffle(self.deck)
+        
+    def deal(self):
+        single_card = self.deck.pop()
+        return single_card
